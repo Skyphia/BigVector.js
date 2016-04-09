@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../big.js-master/big.js"></script>
+		<script src="../Src/BigVector.js"></script>
+	</head>
+	<body>
+		<p id="components"></p>
+		<p id="magnitude"></p>
+		<p id="direction"></p>
+		<p id="sum"></p>
+		<p id="difference"></p>
+		<p id="scaled"></p>
+		<p id="dotProduct"></p>
+		
+		<script> 
+			var components1 = [new Big(3.12), new Big(-9), new Big(-0.1)];
+			var vector1 = new BigVector(components1);
+			var components2 = [new Big(0), new Big(-999), new Big(0.012)];
+			var vector2 = new BigVector(components2);
+			var scalar = new Big(-12.1);
+			
+			document.getElementById("components").innerHTML = "vector1: " + vector1.getComponents() + " vector2: " + vector2.getComponents();
+			document.getElementById("magnitude").innerHTML = "Magnitude: " + vector1.magnitude();
+			document.getElementById("direction").innerHTML = "Direction: " + vector1.direction().getComponents();
+			document.getElementById("sum").innerHTML = "vector1.plus(vector2): " + vector1.plus(vector2).getComponents();
+			document.getElementById("difference").innerHTML = "vector1.minus(vector2): " + vector1.minus(vector2).getComponents();
+			document.getElementById("scaled").innerHTML = "vector1.scale(scalar) (scalar = -12.1): " + vector1.scale(scalar).getComponents();
+			document.getElementById("dotProduct").innerHTML = "vector1.dot(vector2): " + vector1.dot(vector2);
+		</script>
+	</body>
+</html>
